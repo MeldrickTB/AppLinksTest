@@ -7,24 +7,22 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            var hasApp = false;
+            var isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+            var isAndroid = /android/i.test(userAgent);
+            var appStoreURL = "https://apps.apple.com/mx/app/macropay/id6463932842";
+            var appURL = "macropay://";
 
-            if (/android/i.test(userAgent)) {
+            if (isIOS) {
+                window.location.href = appURL;
+                setTimeout(function() {
+                    window.location.href = appStoreURL;
+                }, 2000);
+            } else if (isAndroid) {
                 window.location.href = "intent://example.com#Intent;scheme=macropay;package=com.mx.grupomacro.macropay;end";
-                hasApp = true;
-            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                var iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = "macropay://";
-                document.body.appendChild(iframe);
-                hasApp = true;
+            } else {
+                // Redirigir a una página de descarga genérica o mostrar un mensaje
+                window.location.href = "https://meldricktb.github.io/download";
             }
-
-            setTimeout(function() {
-                if (!hasApp) {
-                    window.location.href = "https://apps.apple.com/mx/app/macropay/id6463932842";
-                }
-            }, 2000);
         });
     </script>
 </head>
