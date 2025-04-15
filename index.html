@@ -15,17 +15,11 @@
             if (isIOS) {
                 var start = new Date().getTime();
                 window.location.href = appURL;
-                setTimeout(function() {
-                    var end = new Date().getTime();
-                    if (end - start < 2000) {
-                        window.location.href = appStoreURL;
-                    }
-                }, 1500);
             } else if (isAndroid) {
                 window.location.href = "intent://example.com#Intent;scheme=macropay;package=com.mx.grupomacro.macropay;end";
             } else {
                 // Redirigir a una página de descarga genérica o mostrar un mensaje
-                window.location.href = "https://meldricktb.github.io/download";
+                window.location.href = appStoreURL;
             }
         });
     </script>
