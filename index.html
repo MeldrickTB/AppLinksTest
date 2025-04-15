@@ -13,10 +13,14 @@
             var appURL = "macropay://";
 
             if (isIOS) {
+                var start = new Date().getTime();
                 window.location.href = appURL;
                 setTimeout(function() {
-                    window.location.href = appStoreURL;
-                }, 2000);
+                    var end = new Date().getTime();
+                    if (end - start < 2000) {
+                        window.location.href = appStoreURL;
+                    }
+                }, 1500);
             } else if (isAndroid) {
                 window.location.href = "intent://example.com#Intent;scheme=macropay;package=com.mx.grupomacro.macropay;end";
             } else {
