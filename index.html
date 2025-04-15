@@ -1,26 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirección a la App</title>
-    <script>
-       ("DOMContentLoaded", function() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            if (/android/i.test(userAgent)) {
-                window.location.href = "intent://example.com#Intent;scheme=myapp;package=com.mx.grupomacro.macropay;end";
-            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                window.location.href = "tel://";
-               .href = "https://apps.apple.com/mx/app/macropay/id6463932842";
-                }, 25);
-            } else {
-                // Redirigir a una página de descarga genérica o mostrar un mensaje
-                window.location.href = "https://meldricktb.github.io/download";
-            }
-        });
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir App</title>
 </head>
 <body>
-    <h1>Redirigiendo...</h1>
+    <a href="myapp://">Abrir mi aplicación</a>
 </body>
 </html>
