@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["com.mx.grupomacro.macropay"],
+        "paths": ["*"]
+      }
+    ]
+  }
+}
