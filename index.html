@@ -13,13 +13,24 @@
             var appURL = "macropay://";
 
             if (isIOS) {
-                var start = new Date().getTime();
-                window.location.href = appURL;
+                var iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = appURL;
+                document.body.appendChild(iframe);
+
+                iframe.onload = function() {
+                    // La aplicación se abrió correctamente
+                };
+
+                iframe.onerror = function() {
+                    // La aplicación no se pudo abrir, redirigir a la App Store
+                    window.location.href = appStoreURL;
+                };
             } else if (isAndroid) {
                 window.location.href = "intent://example.com#Intent;scheme=macropay;package=com.mx.grupomacro.macropay;end";
             } else {
                 // Redirigir a una página de descarga genérica o mostrar un mensaje
-                window.location.href = appStoreURL;
+                window.location.href = "https://meldricktb.github.io/download";
             }
         });
     </script>
