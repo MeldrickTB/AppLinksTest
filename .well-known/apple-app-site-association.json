@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["com.mx.grupomacro.macropay"],
+        "appIDs": ["meldricktb.github.io"],
         "paths": ["*"]
       }
     ]
