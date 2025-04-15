@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirección a la App Store</title>
+    <title>Redirección a la App</title>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+       ("DOMContentLoaded", function() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/android/i.test(userAgent)) {
-                window.location.href = "https://apps.apple.com/mx/app/macropay/id6463932842";
+                window.location.href = "intent://example.com#Intent;scheme=myapp;package=com.mx.grupomacro.macropay;end";
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                window.location.href = "https://apps.apple.com/mx/app/macropay/id6463932842";
+                window.location.href = "myapp://";
+               .href = "https://apps.apple.com/app/com.mx.grupomacro.macropay";
+                }, 25);
             } else {
                 // Redirigir a una página de descarga genérica o mostrar un mensaje
-                window.location.href = "https://example.com/download";
+                window.location.href = "https://meldricktb.github.io/download";
             }
         });
     </script>
