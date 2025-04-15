@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio de Prueba</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
- sitio de prueba básico para demostrar cómo se puede estructurar un archivo HTML.</p>
-        <p>¡Espero que te sea útil!</p>
-    </main>
-    <footer>
-        <p>&copy; 2025 Mi Sitio de Prueba</p>
-    </footer>
+    <title>Redirección a la App Store</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.mx.grupomacro.macropay";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+               https://apps.apple.com/app/com.mx.grupomacro.macropay";
+            } else {
+                // Redirigir a una página de descarga genérica o mostrar un mensaje
+                window.location.href = "https://example.com/download";
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Redirigiendo...</h1>
 </body>
 </html>
