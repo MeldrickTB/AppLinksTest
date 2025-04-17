@@ -13,19 +13,10 @@
             var appURL = "macropay://";
 
             if (isIOS) {
-                var iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = appURL;
-                document.body.appendChild(iframe);
-
-                iframe.onload = function() {
-                    // La aplicación se abrió correctamente
-                };
-
-                iframe.onerror = function() {
-                    // La aplicación no se pudo abrir, redirigir a la App Store
+                window.location.href = appURL;
+                setTimeout(function() {
                     window.location.href = appStoreURL;
-                };
+                }, 2000);
             } else if (isAndroid) {
                 window.location.href = "intent://example.com#Intent;scheme=macropay;package=com.mx.grupomacro.macropay;end";
             } else {
